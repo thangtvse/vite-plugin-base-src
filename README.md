@@ -20,7 +20,7 @@ import ViteBaseSrcPlugin from 'vite-plugin-base-src';
 
 export default defineConfig({
   plugins: [
-      ViteBaseSrcPlugin({
+    ViteBaseSrcPlugin({
       src: 'src',
     }),
   ]
@@ -47,6 +47,15 @@ import pusher from '../utils/pusher';
 
 ```js
 import pusher from 'utils/pusher';
+```
+
+## Configuration
+
+```js
+ViteBaseSrcPlugin({
+  src: 'src', // Required. Src folder.
+  fileExtensions: ['.js', '.mjs'] // Default: ['.js', '.ts', '.jsx', '.tsx']. A list of accepted file extensions. This list is used when resolving a folder or a file without extension in the import statement.
+})
 ```
 
 ## License
