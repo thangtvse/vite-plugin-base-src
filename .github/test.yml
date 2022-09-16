@@ -1,0 +1,28 @@
+name: Test
+on:
+  push
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Cache root node_modules and package node_modules
+        id: cache-root-node-modules
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.cache
+            node_modules
+          key: npm-${{ hashFiles('package.json') }}
+
+      - name: Use Node.js 16
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+
+      - name: NPM install
+        if: steps.cache-root-node-modules.outputs.cache-hit != 'true'
+        run: npm install
+
+      - run: npm run test:cov

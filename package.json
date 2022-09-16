@@ -1,0 +1,67 @@
+{
+  "name": "vite-plugin-base-src",
+  "version": "1.0.0",
+  "description": "A vite plugin for allowing absolute imports inside src folder",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "jest --watchAll",
+    "test:cov": "jest --coverage"
+  },
+  "keywords": [],
+  "author": "uendno",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^18.7.18",
+    "@swc/jest": "^0.2.22",
+    "@types/jest": "^29.0.3",
+    "jest": "^29.0.3",
+    "jest-watch-typeahead": "^2.2.0"
+  },
+  "dependencies": {
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>/src"
+    ],
+    "coverageDirectory": "jest-coverage",
+    "coverageReporters": [
+      "text"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.{js,ts}",
+      "!src/**/*.d.ts"
+    ],
+    "testMatch": [
+      "<rootDir>/src/**/__tests__/**/*.{spec,test}.{js,ts}"
+    ],
+    "transform": {
+      "^.+\\.(js|ts)$": "@swc/jest"
+    },
+    "modulePaths": [
+      "<rootDir>/src"
+    ],
+    "moduleFileExtensions": [
+      "web.js",
+      "js",
+      "web.ts",
+      "ts",
+      "web.tsx",
+      "tsx",
+      "json",
+      "web.jsx",
+      "jsx",
+      "node"
+    ],
+    "watchPlugins": [
+      "jest-watch-typeahead/filename",
+      "jest-watch-typeahead/testname"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ],
+    "reporters": [
+      "default"
+    ]
+  }
+}
