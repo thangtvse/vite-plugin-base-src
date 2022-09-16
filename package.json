@@ -9,7 +9,7 @@
     "build": "rollup -c",
     "publish": "npm run build && npm run publish"
   },
-  "keywords": [],
+  "keywords": ["vite", "plugin", "base", "src", "source"],
   "author": "uendno",
   "license": "MIT",
   "devDependencies": {
