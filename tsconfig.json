@@ -16,10 +16,15 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "baseUrl": "./src/"
+    "baseUrl": "./src/",
+    "declaration": true,
+    "declarationDir": "dist"
   },
   "include": [
     "src",
     "@types"
+  ],
+  "exclude": [
+    "**/__tests__/**"
   ]
 }
