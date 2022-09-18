@@ -1,13 +1,12 @@
 {
   "name": "vite-plugin-base-src",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A vite plugin for allowing absolute imports inside src folder",
   "main": "dist/index.js",
   "scripts": {
     "test": "jest --watchAll",
     "test:cov": "jest --coverage",
-    "build": "rollup -c",
-    "publish": "npm run build && npm run publish"
+    "build": "rollup -c"
   },
   "keywords": ["vite", "plugin", "base", "src", "source"],
   "author": "uendno",
